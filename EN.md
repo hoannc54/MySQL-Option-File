@@ -43,13 +43,13 @@ Trong bảng trước, `%PROGRAMDATA%` đại diện cho thư mục file hệ th
     
     C:> echo %APPDATA%
 
-_`BASEDIR`_ đại diện cho thư mục gốc khi cài đặt MySQL. Khi MySQL 5.7 cài đặt hoàn tất bằng trình cài đặt MySQL,nó thường là `C:_`PROGRAMDIR`_MySQLMySQL 5.7 Server`, nơi m à_`PROGRAMDIR`_ đại diện thư mục của chương trình (thường là `Program Files` trên các phiên bản tiếng Anh của Windows), Xem thêm tại [Section 2.3.3, "MySQL Installer for Windows"][9]. 
+_`BASEDIR`_ đại diện cho thư mục gốc khi cài đặt MySQL. Khi MySQL 5.7 cài đặt hoàn tất bằng trình cài đặt MySQL,nó thường là `C:_`PROGRAMDIR`_MySQLMySQL 5.7 Server`, nơi mà_`PROGRAMDIR`_ đại diện thư mục của chương trình (thường là `Program Files` trên các phiên bản tiếng Anh của Windows), Xem thêm tại [Section 2.3.3, "MySQL Installer for Windows"][9]. 
 
 Trên các hệ thống Unix và tương tự Unix, các chương trình MySQL đọc các file khởi động từ các file được biểu diễn trong bảng sau, theo một thứ tự nhất định ( các file đầu danh sách được đọc trước, và các file được đọc theo thứ tự ưu tiên). 
 
 Ghi chú:
 
-Trên các nền tảng Unix, MySQL bỏ qua các file cấu hình mà chúng có thể bị ghi đè ở mọi nơi. Đây giống như là ý tưởng về một biện pháp bảo mật.
+Trên các nền tảng Unix, MySQL bỏ qua các file cấu hình mà chúng có thể bị ghi đè ở mọi nơi. Đây chủ ý về một biện pháp bảo mật.
 
 **Bảng 4.2 Các file tùy chọn được đọc trên các hệ thống Unix và tương tự Unix**
 
@@ -68,9 +68,9 @@ Trong bảng trước,dấu `~` đại diện cho thư mục home của user hi�
 
 _`SYSCONFDIR`_ đại diện cho thư mục được chỉ định với tùy chọn [`SYSCONFDIR`][10] cho **CMake** khi MySQL được xây dựng. Theo mặc định, đây thường là thư mục `etc`nằm trong thư mục cài đặt đã được biên dịch. 
 
-`MYSQL_HOME` là biến môi trường chứa đường dẫn đến thư mục mà trong đó có chứa file `my.cnf` của một máy chủ cụ thể. Nếu `MYSQL_HOME` không được thiết đặt và bạn khởi động server sử dụng chương trình [**mysqld_safe**][11], [**mysqld_safe**][11] đặt nó thành _`BASEDIR`_, thư mục cài đặt ban đầu của MySQL. 
+`MYSQL_HOME` là biến môi trường chứa đường dẫn đến thư mục mà trong đó có chứa file `my.cnf` của một máy chủ cụ thể. Nếu `MYSQL_HOME` không được thiết lập và bạn khởi động server sử dụng chương trình [**mysqld_safe**][11], [**mysqld_safe**][11] đặt nó thành _`BASEDIR`_, thư mục cài đặt ban đầu của MySQL. 
 
-_`DATADIR`_ thường là `/usr/local/mysql/data`, mặc dù điều này có thể thay đổi theo nền tẳng và phương thức cài đặt. Giá trị của nó là vị trí của thư mục chứa dữ liệu được tích hợp khi MySQL được biên dịch, nó không phải vị trí được chỉ định trước bằng tùy chọn [`\--datadir`][12] khi [**mysqld**][1] khởi động.Sử dụng [`\--datadir`][12] tại thời điểm chạy không gây ảnh hưởng gì lên máy chủ khi tìm kiếm những file tùy chọn mà nó đọc trước mọi tiến trình tùy chọn.
+_`DATADIR`_ thường là `/usr/local/mysql/data`, mặc dù điều này có thể thay đổi theo từng nền tảng và phương thức cài đặt. Giá trị của nó là vị trí của thư mục chứa dữ liệu được tích hợp khi MySQL được biên dịch, nó không phải vị trí được chỉ định trước bằng tùy chọn [`\--datadir`][12] khi [**mysqld**][1] khởi động.Sử dụng [`\--datadir`][12] tại thời điểm chạy không gây ảnh hưởng gì lên máy chủ khi tìm kiếm những file tùy chọn mà nó đọc trước mọi tiến trình tùy chọn.
 
 Nếu tìm thấy nhiều phiên bản cho một tùy chọn đã có, phiên bản cuối cùng sẽ được ưu tiên, với một ngoại lệ là: đối với **[mysqld**][1], phiên bản _đầu tiên_  của tùy chọn `[\--user`][13] được sử dụng như một giải pháp đảm bảo an toàn bảo mật , để ngăn chặn một người dùng được chỉ định ghi đè lên bằng chế độ command line trong một file tùy chọn. 
 
@@ -100,14 +100,14 @@ _`group`_ là tên của một chưong trình hay một nhóm mà bạn muốn �
 
 các khoảng trống ở đầu và cuối được tự động bỏ đi trong những tên và giá trị tùy chọn.
 
-bạn có thể sử dụng các ký tự đóng như `\b`, `\t`, `\n`, `\r`, `\\`, và `\s` trong các giá trị tùy chọn để đại diện cho backspace, tab, newline, carriage return, backslash, and space characters. trong các file tùy chọn, các quy tắc cho ký tự đặc biệt này là: 
+bạn có thể sử dụng các ký tự đóng như `\b`, `\t`, `\n`, `\r`, `\\`, và `\s` trong các giá trị tùy chọn để đại diện cho backspace, tab, newline, carriage return, backslash, và space characters. trong các file tùy chọn, các quy tắc cho ký tự đặc biệt này là: 
 
 * ký tự backslash theo sau một ký tự chuỗi đánh dấu đặc biệt được chuyển đổi thành một ký tự đại diện được trình bày theo trình tự. Ví dụ như, `\s`được chuyển đổi thành dấu khoảng trắng. 
 * Ký tự  backslash không theo sau nó là một ký tự chuỗi thoát hợp lệ thì giá trị của nó sẽ không bị thay đổi. Ví dụ, `S` vẫn được giữ lại như cũ. 
 
 Các quy tắc trước có nghĩa là với một ký tự backslash có thể được đưa ra như là  `\\`, hoặc là `\` nếu nó không có theo sau bởi một ký tự thoát khả dụng. 
 
-Các quy tắc cho những chuỗi thoát trong file tùy chọn hơi khác so với những nguyên tắc cho các chuỗi thoát trong chuỗi ký tự của câu lệnh SQL. Trong bối cảnh thứ 2, nếu "_`x`_" không phải là một ký tự chuỗi thoát hợp lệ, `_`\x`_` trở thành "_`x`_" thay cho `_`\x`_`. Xem tại [Section 9.1.1, "String Literals"][15]. 
+Các quy tắc cho những chuỗi thoát trong file tùy chọn hơi khác so với những nguyên tắc cho các chuỗi thoát trong chuỗi ký tự của câu lệnh SQL. Trong ngữ cảnh sau, nếu "_`x`_" không phải là một ký tự chuỗi thoát hợp lệ, `_`\x`_` trở thành "_`x`_" thay cho `_`\x`_`. Xem tại [Section 9.1.1, "String Literals"][15]. 
 
 Các quy tắc thoát cho các giá trị file tùy chọn đặc biệt thích hợp đối với các tên đường dẫn trên môi trường Windows, sử dụng `\` là dấu tách trên đường dẫn. Dấu phân tách trên đường dẫn trong môi trường Windows là  `\\` nếu nó có một ký tự chuỗi thoát theo sau. Nó cũng có thể được viết là `\\` hoặc  `\` Nếu nó không có ký tự chuỗi thoát theo sau (giải thích theo nghĩa câu trên). một cách khác là , dấu  `/` có thể được sử dụng trong tên đường dẫn của Window và sẽ được coi như là  `\`. Giả sử bạn muốn chỉ định thư mục gốc `C:\Program Files\MySQL\MySQL Server 5.7` trong một file tùy chọn. Điều này có thể được thực hiện theo nhiều cách khác nhau. Một vài ví dụ như: 
     
@@ -121,7 +121,7 @@ Nếu tên của nhóm tùy chọn trùng với tên của chương trình, các
 
 Các tùy chọn nhóm `[client]` được đọc bởi các chương trình client, được cung cấp trong phân phối của MySQL (nhưng _không phải_ bởi  **[mysqld**][1]). Để hiểu được làm cách nào các chương trình client bên thứ 3 sử dụng C API lại có thể sử dụng các file tùy chọn, đọc tại C API documentation ở [Section 27.8.7.50, "mysql_options()"][16]. 
 
-Các group `[client]` cho phép bạn chỉ định những tùy chọn nào được áp dụng cho các client.Để ví dụ, `[client]` là một group thích hợp để chỉ định việc sử dụng mât khẩu khi kết nối tới server. (Nhưng hãy chắc chắn là các file tùy chọn chỉ cho phép bạn truy cập, vì thế những người khác không thể tìm ra mật khẩu của bạn) Hãy chắc chắn là không đặt các tùy chọn trong nhóm `[client]`  trừ khi nó được công nhận đối với tất cả các chương trình client mà bạn sử dụng. Các chương trình không hiểu các tùy chọn sẽ thoát sau khi hiển thị thông báo lỗi nếu bạn cố gắng chạy chúng.
+Các nhóm `[client]` cho phép bạn chỉ định những tùy chọn nào được áp dụng cho các client.Để ví dụ, `[client]` là một group thích hợp để chỉ định việc sử dụng mât khẩu khi kết nối tới server. (Nhưng hãy chắc chắn là các file tùy chọn chỉ cho phép bạn truy cập, vì thế những người khác không thể tìm ra mật khẩu của bạn) Hãy chắc chắn là không đặt các tùy chọn trong nhóm `[client]`  trừ khi nó được công nhận đối với tất cả các chương trình client mà bạn sử dụng. Các chương trình không hiểu các tùy chọn sẽ thoát sau khi hiển thị thông báo lỗi nếu bạn cố gắng chạy chúng.
 
 Liệt kê thêm những nhóm tùy chọn chung  và sau đó là các nhóm đặc thù. Ví dụ, một nhóm `[client]`  phổ biến hơn bởi vì nó được đọc bởi tất cả các chương trình client, trong khi một nhóm `[mysqldump]` lại chỉ được đọc bởi **[mysqldump**][17]. Các tùy chọn đặc thù sau sẽ ghi đè các tùy chọn đặc thù trước đó,  vì vậy hay đặt các nhóm tùy chọn theo thứ tự  `[client]`, `[mysqldump]` cho phép **[mysqldump**][17]- một tùy chọn cụ thể được ghi đè lên tùy chọn của `[client]`. 
 
@@ -172,7 +172,7 @@ MySQL không đảm bảo về thứ tự các tệp tùy chọn trong thư mụ
 
 Ghi chú: 
 
- Bất cứ file nào được tìm thấy và include vào bằng cách sử dụng chỉ thị `!includedir` trong các hệ điều hành Unix `phải` có tên file kết thục bằng  `.cnf`. Trên Windows, chỉ thị này sẽ kiểm tra các file với phần mở rộng là `.ini` hoặc `.cnf`.
+ Bất cứ file nào được tìm thấy và được include vào bằng cách sử dụng chỉ thị `!includedir` trong các hệ điều hành Unix `phải` có tên file kết thục bằng  `.cnf`. Trên Windows, chỉ thị này sẽ kiểm tra các file với phần mở rộng là `.ini` hoặc `.cnf`.
 
 Viết nội dung của các file tùy chọn được include như các file tùy chọn khác. Có nghĩa là, nó nên chứa các nhóm tùy chọn, mỗi nhóm được đứng trước bởi 1 dòng `[_`group`_]`  chỉ định chương trình mà tùy chọn áp dụng.
 
